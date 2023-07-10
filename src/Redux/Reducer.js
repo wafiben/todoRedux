@@ -5,12 +5,12 @@ const initState = [
 const Reducer = (state = initState, action) => {
   switch (action.type) {
     case "delete":
-      return state.filter((elt) => elt.id != action.payload);
+      return state.filter((elt) => elt.id !== action.payload);
     case "add":
       return [...state, action.payload];
     case "udpate":
       return state.map((elt) => {
-        if (elt.id == action.payload.id) {
+        if (elt.id === action.payload.id) {
           return { ...elt, text: action.payload.text };
         } else {
           return elt;
@@ -18,7 +18,7 @@ const Reducer = (state = initState, action) => {
       });
     case "doneUdone":
       return state.map((elt) => {
-        if (elt.id == action.payload) {
+        if (elt.id === action.payload) {
           if (elt.done) {
             return { ...elt, done: false };
           } else {
