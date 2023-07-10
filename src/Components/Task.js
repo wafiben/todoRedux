@@ -33,22 +33,23 @@ function Task({ task }) {
 
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "18rem" }} className="m-2">
         <Card.Body>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }} >
             <Card.Title
               style={{
                 textDecoration: !task.done ? "none" : "line-through",
-              }}
+				marginRight:"2px"
+              }}className="ml-3"
             >
               {task.text}
             </Card.Title>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" onClick={handleDone} />
+            <Form.Group  controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" onClick={handleDone}  />
             </Form.Group>
           </div>
 
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="primary" onClick={handleShow} className="m-2">
             update
           </Button>
           <Button variant="danger" onClick={handleDelete}>
@@ -56,7 +57,6 @@ function Task({ task }) {
           </Button>
         </Card.Body>
       </Card>
-      {/* waddd */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Update Task</Modal.Title>
