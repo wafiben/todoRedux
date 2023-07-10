@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 function Add() {
   const dispatch = useDispatch();
   const [task, setTask] = useState({ id: "", text: "", done: false });
-  let y = "";
+
 
   const handleChange = (e) => {
     setTask({ ...task, id: uuidv4(), text: e.target.value });
